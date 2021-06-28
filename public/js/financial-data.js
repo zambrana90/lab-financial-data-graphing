@@ -1,8 +1,9 @@
 let from = "2021-05-28";
 let to = "2021-06-27";
+let currency = "USD";
 
 function generateApiUrl() {
-  return `https://api.coindesk.com/v1/bpi/historical/close.json?start=${from}&end=${to}`
+  return `https://api.coindesk.com/v1/bpi/historical/close.json?start=${from}&end=${to}&currency=${currency}`
 }
 
 function getData() {
@@ -58,7 +59,16 @@ function loadData() {
   getData();
 }
 
+function currencyData(){
+    currency=document.querySelector('.Currency').value;
+    console.log(currency)
+
+    getData();
+}
+
 getData();
 
 document.getElementsByName("From")[0].addEventListener('change', loadData);
 document.getElementsByName("To")[0].addEventListener('change', loadData);
+
+document.getElementsByName("currency")[0].addEventListener('change', currencyData);
