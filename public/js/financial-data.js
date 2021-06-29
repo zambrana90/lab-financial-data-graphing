@@ -36,8 +36,8 @@ function printTheChart(stockData) {
       datasets: [
         {
           label: "Bitcoin Price Index",
-          backgroundColor: "grey",
-          borderColor: "grey",
+          backgroundColor: "#AD934C",
+          borderColor: "black",
           data: stockPrices,
         },
       ],
